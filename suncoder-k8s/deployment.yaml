@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: suncoder-app
+spec:
+  selector:
+    matchLabels:
+      app: suncoder-app
+  template:
+    metadata:
+      labels:
+        app: suncoder-app
+    spec:
+      containers:
+      - name: suncoder-app
+        image: suncoder-app
+        ports:
+        - containerPort: 3000
+        resources:
+            requests:
+              cpu: 50m
+              memory: 20Mi
+            limits:
+              cpu: 500m
+              memory: 25Mi

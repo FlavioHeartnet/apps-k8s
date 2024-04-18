@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: suncoder-app
+spec:
+  selector:
+    app: suncoder-app
+  ports:
+  - port: 3000
+    targetPort: 3000
