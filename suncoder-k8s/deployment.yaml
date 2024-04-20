@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: suncoder-app
-        image: flavioheartnet/suncoder:44
+        image: suncoder-app
         envFrom:
           - configMapRef:
               name: suncoder-config
