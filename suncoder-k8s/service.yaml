@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: suncoder-app
+  type: ClusterIP  
   ports:
   - port: 3000
     targetPort: 3000
