@@ -1,7 +1,14 @@
-apiVersion: networking.gke.io/v1
-kind: ManagedCertificate
+apiVersion: cert-manager.io/v1
+kind: Issuer
 metadata:
-  name: managed-cert
+  name: letsencrypt
 spec:
-  domains:
-    - suncoder.so-academy.com   
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: flavionogueirabarros@gmail.com
+    privateKeySecretRef:
+      name: letsencrypt
+    solvers:
+    - http01:
+        ingress:
+          name: ingress-host

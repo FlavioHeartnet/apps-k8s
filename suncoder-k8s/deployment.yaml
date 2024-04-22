@@ -14,13 +14,6 @@ spec:
       containers:
       - name: suncoder-app
         image: flavioheartnet/suncoder:64
-        resources:
-            requests: 
-              cpu: "0.05"
-              memory: 20Mi
-            limits:
-              cpu: "0.05"
-              memory: 25Mi
         envFrom:
           - configMapRef:
               name: suncoder-config
