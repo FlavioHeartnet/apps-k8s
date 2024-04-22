@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gce
+  annotations: 
+    networking.gke.io/managed-certificates: managed-cert
+    ingressClassName: "gce"
+    #cert-manager.io/issuer: "letsencrypt"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - suncoder.so-academy.com
+    secretName: letsencrypt-tls
+  rules:
+  - host: suncoder.so-academy.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: suncoder-app-service
+            port:
+              number: 80

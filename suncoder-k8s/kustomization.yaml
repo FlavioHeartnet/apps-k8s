@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
 - deployment.yaml
 - service.yaml
+- ingress.yaml
+- cluster-issuer.yaml
 
 images:
 - name: suncoder-app
