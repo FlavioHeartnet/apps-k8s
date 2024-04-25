@@ -13,9 +13,10 @@ spec:
     spec:
       containers:
       - name: suncoder-app
-        image: flavioheartnet/suncoder:64
+        image: flavioheartnet/suncoder:67
         envFrom:
           - configMapRef:
               name: suncoder-config
         ports:
         - containerPort: 3000
+              

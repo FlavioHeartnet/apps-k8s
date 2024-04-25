@@ -3,19 +3,16 @@ kind: Ingress
 metadata:
   name: ingress-host
   annotations: 
-    networking.gke.io/managed-certificates: managed-cert
-    ingressClassName: "gce"
     kubernetes.io/ingress.allow-http: "true"
-    kubernetes.io/ingress.global-static-ip-name: web-ip
-    #cert-manager.io/issuer: "letsencrypt"
+    cert-manager.io/issuer: "letsencrypt"
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - suncoder.so-academy.com
+    - sunny.so-academy.com
     secretName: web-ssl
   rules:
-  - host: suncoder.so-academy.com
+  - host: sunny.so-academy.com
     http:
       paths:
       - path: /
