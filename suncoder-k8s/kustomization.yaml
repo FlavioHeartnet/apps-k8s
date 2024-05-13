@@ -10,4 +10,4 @@ resources:
 images:
 - name: suncoder-app
   newName: flavioheartnet/suncoder
-  newTag: "67"
+  newTag: "68"
